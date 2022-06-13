@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import { Container } from "./styles";
 import { Form } from "../../components/Form";
-import { Text } from "react-native";
+import { Header } from "../../components/Header";
 
 export function SignUp() {
   return (
@@ -14,7 +14,7 @@ export function SignUp() {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView behavior="position" enabled>
           <>
-            <Text>SignUp</Text>
+            <Header />
             <Form />
           </>
         </KeyboardAvoidingView>

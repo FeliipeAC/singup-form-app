@@ -28,14 +28,17 @@ export const IconContainer = styled.View<Props>`
 
 export const InputText = styled(TextInput)<Props>`
   flex: 1;
+  /* background-color: #f4f5f6; */
   background-color: #ffffff;
-  color: #7a7a80;
+  color: #171924;
   padding: 16px 24px;
+  border: 1px solid #ccd3e2;
   margin-bottom: 16px;
+  border-radius: 8px;
+  font-size: 16px;
   ${({ isFocused }) =>
     isFocused &&
     css`
-      border-bottom-width: 2px;
-      border-bottom-color: #dc1637;
+      border-color: #296af7;
     `};
 `;
