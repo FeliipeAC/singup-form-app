@@ -11,8 +11,8 @@ import { Header } from "../../components/Header";
 
 export function SignUp() {
   return (
-    <Container>
-      <ScrollView>
+    <ScrollView>
+      <Container>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="position" enabled>
             <>
@@ -21,7 +21,7 @@ export function SignUp() {
             </>
           </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
-      </ScrollView>
-    </Container>
+      </Container>
+    </ScrollView>
   );
 }
