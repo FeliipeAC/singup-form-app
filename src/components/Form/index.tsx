@@ -9,14 +9,15 @@ export function Form() {
     <>
       <Container>
         <Box>
-          <Input placeholder="Nome" />
+          <Input placeholder="Full name" />
+          <Input placeholder="Username" />
           <Input
             placeholder="E-mail"
             keyboardType="email-address"
             autoCapitalize="none"
           />
-          <Input placeholder="Senha" secureTextEntry />
-          <Input placeholder="Confirme a senha" secureTextEntry />
+          <Input placeholder="Password" secureTextEntry />
+          <Input placeholder="Confirm Password" secureTextEntry />
         </Box>
         <Button title="Register" onPress={handleUserRegister} />
       </Container>
