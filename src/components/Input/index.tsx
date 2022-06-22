@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TextInputProps } from "react-native";
 import { Container, IconContainer, InputText } from "./styles";
+import { Control, Controller } from "react-hook-form";
 
 export type InputProps = TextInputProps & {
   value?: string;
