@@ -31,6 +31,7 @@ export function Form() {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -44,8 +45,8 @@ export function Form() {
   });
 
   function handleUserRegister(data: FormData) {
-    console.log(data);
-    Alert.alert("Register");
+    Alert.alert("Thanks!", "Your account has been successfully created.");
+    reset();
   }
 
   return (
