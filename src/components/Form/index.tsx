@@ -2,6 +2,8 @@ import { ControlledInput } from "../ControlledInput";
 import { Container, Box } from "./styles";
 import { Button } from "../Button";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 type FormData = {
   fullName: string;
@@ -11,8 +13,23 @@ type FormData = {
   confirmPassword: string;
 };
 
+const schema = yup.object({
+  fullName: yup.string().required("Full name is required"),
+  userName: yup.string().required("Username is required"),
+  email: yup.string().email("E-mail invalid").required("E-mail is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Password does not match"),
+});
+
 export function Form() {
-  const { control, handleSubmit } = useForm<FormData>();
+  const { control, handleSubmit } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
   function handleUserRegister(data: FormData) {}
 
   return (
