@@ -33,7 +33,6 @@ export const InputText = styled(TextInput)<Props>`
   color: #171924;
   padding: 16px 24px;
   border: 1px solid #ccd3e2;
-  margin-bottom: 16px;
   border-radius: 8px;
   font-size: 16px;
   ${({ isFocused }) =>

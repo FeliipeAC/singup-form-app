@@ -4,10 +4,11 @@ import { Button } from "../Button";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Alert } from "react-native";
 
 type FormData = {
   fullName: string;
-  username: string;
+  userName: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -27,10 +28,25 @@ const schema = yup.object({
 });
 
 export function Form() {
-  const { control, handleSubmit } = useForm<FormData>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: yupResolver(schema),
+    defaultValues: {
+      fullName: "",
+      userName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
-  function handleUserRegister(data: FormData) {}
+
+  function handleUserRegister(data: FormData) {
+    console.log(data);
+    Alert.alert("Register");
+  }
 
   return (
     <>
@@ -40,11 +56,13 @@ export function Form() {
             name="fullName"
             control={control}
             placeholder="Full name"
+            error={errors.fullName}
           />
           <ControlledInput
-            name="username"
+            name="userName"
             control={control}
             placeholder="Username"
+            error={errors.userName}
           />
           <ControlledInput
             name="email"
@@ -52,18 +70,21 @@ export function Form() {
             placeholder="E-mail"
             keyboardType="email-address"
             autoCapitalize="none"
+            error={errors.email}
           />
           <ControlledInput
             name="password"
             control={control}
             placeholder="Password"
             secureTextEntry
+            error={errors.password}
           />
           <ControlledInput
             name="confirmPassword"
             control={control}
             placeholder="Confirm Password"
             secureTextEntry
+            error={errors.confirmPassword}
           />
         </Box>
         <Button title="Register" onPress={handleSubmit(handleUserRegister)} />

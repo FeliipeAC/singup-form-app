@@ -13,14 +13,14 @@ export function SignUp() {
   return (
     <ScrollView>
       <Container>
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <KeyboardAvoidingView behavior="position" enabled>
-            <>
-              <Header />
-              <Form />
-            </>
-          </KeyboardAvoidingView>
-        </TouchableWithoutFeedback>
+        {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */}
+        {/* <KeyboardAvoidingView behavior="position" enabled> */}
+        <>
+          <Header />
+          <Form />
+        </>
+        {/* </KeyboardAvoidingView> */}
+        {/* </TouchableWithoutFeedback> */}
       </Container>
     </ScrollView>
   );
